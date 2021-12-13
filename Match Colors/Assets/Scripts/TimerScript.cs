@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -14,14 +15,18 @@ public class TimerScript : MonoBehaviour
     private TextMeshProUGUI textTimer;
 
     [SerializeField]
-    Button buttonReset;
+    Button ButtonReset;
+
+    [SerializeField]
+    Button ButtonMainMenu;
     private float timer = 0f;
 
     private void Start()
     {
         textTimer = GetComponent<TextMeshProUGUI>();
 
-        buttonReset.onClick.AddListener(Reset);
+        ButtonReset.onClick.AddListener(Reset);
+        ButtonMainMenu.onClick.AddListener(ToMainMenu);
     }
 
     void Update()
@@ -71,5 +76,10 @@ public class TimerScript : MonoBehaviour
         GameManager.TileOne = null;
         GameManager.TileTwo = null;
         GameManager.gameOver = false;
+    }
+
+    private void ToMainMenu()
+    {
+        SceneManager.LoadScene("SceneMainMenu");
     }
 }
