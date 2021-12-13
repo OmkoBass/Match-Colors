@@ -70,6 +70,7 @@ public class CursorController : MonoBehaviour
 
                     if (GameManager.TileTwo == GameManager.TileOne)
                     {
+                        GameManager.TileTwo = null;
                         return;
                     }
 
