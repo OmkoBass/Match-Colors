@@ -7,5 +7,5 @@ public class GameManager : MonoBehaviour
     public static GameObject TileOne;
     public static GameObject TileTwo;
 
-    public static GameObject[,] tiles = new GameObject[7, 4];
+    public static GameObject[,] tiles = new GameObject[0, 0];
 }
