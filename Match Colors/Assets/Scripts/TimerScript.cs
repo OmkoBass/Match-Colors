@@ -41,7 +41,11 @@ public class TimerScript : MonoBehaviour
 
     private void Reset()
     {
-        int[] indexes = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13 };
+        // 4 x 4
+        // Length is 4, we multiply it by 2 to get 8, which is the number of colors
+        // 5 x 4
+        // Length is 5, we multiply it by 2 to get 10, which is the number of colors
+        var indexes = GenerateTiles.CreateIndexes(GameManager.tiles.GetLength(0) * 2);
 
         int step = 0;
 
