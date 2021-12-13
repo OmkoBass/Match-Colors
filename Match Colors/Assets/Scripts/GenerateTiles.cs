@@ -1,21 +1,51 @@
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 public class GenerateTiles : MonoBehaviour
 {
     [SerializeField]
     GameObject Tile;
 
+    // Colors should be
+    // 4 - 14
     [SerializeField]
-    Color[] Colors = new Color[14];
+    Color[] Colors = new Color[0];
 
-    private GameObject[,] tiles = new GameObject[7, 4];
+    private GameObject[,] tiles = new GameObject[0, 0];
 
     // TODO Refactor this shit to auto generate
-    private int[] indexes = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13 };
+    private int[] indexes = new int[0];
 
     void Start()
     {
+        int colorLength = Colors.Length;
+
+        int size = colorLength / 2;
+
+        int[] tempArray = new int[colorLength * 2];
+
+        for (int i = 0; i < colorLength * 2; i++)
+        {
+            tempArray[i] = i / 2;
+        }
+
+        // 8 Colors means 16 tiles
+        // 16 tiles means it's a 4 x 4 grid
+        // So the constant 4 is the 4 columns
+        GameObject[,] tempTiles = new GameObject[colorLength / 2, 4];
+
+        for (int i = 0; i < colorLength / 2; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                tempTiles[i, j] = new GameObject();
+            }
+        }
+
+        indexes = tempArray;
+        tiles = tempTiles;
+
         Generate();
     }
 
