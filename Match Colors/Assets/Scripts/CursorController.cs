@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class CursorController : MonoBehaviour
 {
@@ -46,6 +45,11 @@ public class CursorController : MonoBehaviour
 
     private void DetectObject()
     {
+        if (!cameraMain)
+        {
+            return;
+        }
+
         Ray ray = cameraMain.ScreenPointToRay(cursorControls.Mouse.Position.ReadValue<Vector2>());
         RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
 
@@ -63,6 +67,11 @@ public class CursorController : MonoBehaviour
                 else if (GameManager.TileTwo == null)
                 {
                     GameManager.TileTwo = hit.collider.gameObject;
+
+                    if (GameManager.TileTwo == GameManager.TileOne)
+                    {
+                        return;
+                    }
 
                     var QuestionMark = GameManager.TileTwo.transform.Find("QuestionMark");
                     QuestionMark.gameObject.SetActive(false);
