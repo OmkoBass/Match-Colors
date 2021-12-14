@@ -22,28 +22,10 @@ public class GenerateTiles : MonoBehaviour
         int colorLength = Colors.Length;
 
         indexes = CreateIndexes(colorLength);
-        tiles = CreateTiles(colorLength);
+        tiles = new GameObject[colorLength / 2, 4];
         GameManager.tiles = tiles;
 
         Generate();
-    }
-
-    public static GameObject[,] CreateTiles(int Length)
-    {
-        // 8 Colors means 16 tiles
-        // 16 tiles means it's a 4 x 4 grid
-        // So the constant 4 is the 4 columns
-        GameObject[,] tempTiles = new GameObject[Length / 2, 4];
-
-        for (int i = 0; i < Length / 2; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                tempTiles[i, j] = new GameObject();
-            }
-        }
-
-        return tempTiles;
     }
 
     public static int[] CreateIndexes(int Length)
