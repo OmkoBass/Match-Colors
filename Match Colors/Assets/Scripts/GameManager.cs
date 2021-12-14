@@ -8,4 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameObject TileTwo;
 
     public static GameObject[,] tiles = new GameObject[0, 0];
+
+    public static Color[] Colors = new Color[0];
 }
