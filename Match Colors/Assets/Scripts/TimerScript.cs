@@ -9,9 +9,6 @@ public class TimerScript : MonoBehaviour
     [SerializeField]
     GameObject Tile;
 
-    [SerializeField]
-    Color[] Colors = new Color[14];
-
     private TextMeshProUGUI textTimer;
 
     [SerializeField]
@@ -69,7 +66,7 @@ public class TimerScript : MonoBehaviour
                 var Color = GameManager.tiles[i, j].transform.Find("Color");
                 SpriteRenderer spriteRenderer = Color.GetComponent<SpriteRenderer>();
 
-                spriteRenderer.color = Colors[indexes[step]];
+                spriteRenderer.color = GameManager.Colors[indexes[step]];
 
                 step++;
             }
