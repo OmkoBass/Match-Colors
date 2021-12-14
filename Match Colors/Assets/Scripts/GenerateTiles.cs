@@ -23,7 +23,9 @@ public class GenerateTiles : MonoBehaviour
 
         indexes = CreateIndexes(colorLength);
         tiles = new GameObject[colorLength / 2, 4];
+
         GameManager.tiles = tiles;
+        GameManager.Colors = Colors;
 
         Generate();
     }
