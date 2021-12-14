@@ -8,6 +8,9 @@ public class CursorController : MonoBehaviour
     [SerializeField]
     Texture2D CursorClicked;
 
+    [SerializeField]
+    AudioClip AudioClickTile;
+
     private CursorControls cursorControls;
     private Camera cameraMain;
     private void ChangeCursor(Texture2D cursorType)
@@ -57,6 +60,8 @@ public class CursorController : MonoBehaviour
         {
             if (hit.collider.tag == "Tile")
             {
+                SoundManager.Instance.PlayMusic(AudioClickTile);
+
                 if (GameManager.TileOne == null)
                 {
                     GameManager.TileOne = hit.collider.gameObject;
