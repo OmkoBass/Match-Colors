@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static float Timer = 0;
     public static int Score = 0;
     public static bool gameOver = false;
     public static GameObject TileOne;
