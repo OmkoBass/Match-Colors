@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 29637020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 888795979}
+        m_TargetAssemblyTypeName: UIControls, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &29637020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +336,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &888795978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888795980}
+  - component: {fileID: 888795979}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &888795979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888795978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88d31a669b69794da9565321b26774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioButtonClick: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+--- !u!4 &888795980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888795978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.755248, y: 3.7304473, z: -0.41582778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365478211
 GameObject:
@@ -720,7 +776,7 @@ GameObject:
   - component: {fileID: 1957997847}
   - component: {fileID: 1957997848}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,9 +805,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1957997846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a5ad2a4b9d8ef409ab3147e4808900, type: 3}
+  m_Script: {fileID: 11500000, guid: 58e2f639471b7e14494bbdca8679bfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonStart: {fileID: 29637019}
   CursorIdle: {fileID: 2800000, guid: 5e48a39f29ef51740816235048d1cbd9, type: 3}
   CursorClicked: {fileID: 2800000, guid: fe6602b7a98a1504fbd073b1742e7fc8, type: 3}
+  AudioClickTile: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
