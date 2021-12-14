@@ -52,9 +52,12 @@ public class GenerateTiles : MonoBehaviour
         // Shuffle index array
         indexes = indexes.OrderBy(x => Random.Range(0, indexes.Length)).ToArray();
 
-        for (int i = 0; i < tiles.GetLength(0); i++)
+        int X = tiles.GetLength(0);
+        int Y = tiles.GetLength(1);
+
+        for (int i = 0; i < X; i++)
         {
-            for (int j = 0; j < tiles.GetLength(1); j++)
+            for (int j = 0; j < Y; j++)
             {
                 var newTile = Instantiate(Tile);
 
@@ -79,9 +82,12 @@ public class GenerateTiles : MonoBehaviour
 
         indexes = indexes.OrderBy(x => Random.Range(0, indexes.Length)).ToArray();
 
-        for (int i = 0; i < tiles.GetLength(0); i++)
+        int X = tiles.GetLength(0);
+        int Y = tiles.GetLength(1);
+
+        for (int i = 0; i < X; i++)
         {
-            for (int j = 0; j < tiles.GetLength(1); j++)
+            for (int j = 0; j < Y; j++)
             {
                 var Color = tiles[i, j].transform.Find("Color");
                 SpriteRenderer spriteRenderer = Color.GetComponent<SpriteRenderer>();

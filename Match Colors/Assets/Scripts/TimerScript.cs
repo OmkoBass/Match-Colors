@@ -48,9 +48,12 @@ public class TimerScript : MonoBehaviour
 
         indexes = indexes.OrderBy(x => Random.Range(0, indexes.Length)).ToArray();
 
-        for (int i = 0; i < GameManager.tiles.GetLength(0); i++)
+        int X = GameManager.tiles.GetLength(0);
+        int Y = GameManager.tiles.GetLength(1);
+
+        for (int i = 0; i < X; i++)
         {
-            for (int j = 0; j < GameManager.tiles.GetLength(1); j++)
+            for (int j = 0; j < Y; j++)
             {
                 var QuestionMark = GameManager.tiles[i, j].transform.Find("QuestionMark");
 
@@ -59,9 +62,9 @@ public class TimerScript : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < GameManager.tiles.GetLength(0); i++)
+        for (int i = 0; i < X; i++)
         {
-            for (int j = 0; j < GameManager.tiles.GetLength(1); j++)
+            for (int j = 0; j < Y; j++)
             {
                 var Color = GameManager.tiles[i, j].transform.Find("Color");
                 SpriteRenderer spriteRenderer = Color.GetComponent<SpriteRenderer>();
